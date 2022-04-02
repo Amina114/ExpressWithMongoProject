@@ -1,9 +1,10 @@
 <html>
     <body>
            <h1> Modifier un contact </h1>
-           <form Action="/contact/updateaction/:id" method="put">
-                <input type ="text" name="FullName" >
-                <input type ="number" name="Phone">
+           <form Action="/contact/updateaction" method="post">
+                <input type ="text" name="FullName" value="{{doc.FullName}}" >
+                <input type ="number" name="Phone" value="{{doc.Phone}}">
+                <input type ="text" name="id" hidden value="{{doc._id}}">
                 <input type ="submit" name="Modifer">
            </form>
     </body>

@@ -4,8 +4,14 @@
     </head>
     <body> 
         <h1> List des contacts </h1>
-        <h4> <a href="/contact/get">  Recherchce un contact par id  </a>  </h4>
+        <h4> <a href="/contact/addform"> Ajouter un contact </a>  </h4>
+        <h4>   Recherchce un contact par nom ou Phone   </a>  </h4>
+        <form action ="/contact/search" method="post">
+                <input type ="text" name="search"/>
+                <input type ="number" name="pn"/>
+                <input type ="submit" value="OK"/>
 
+         </form>
 
         <table border="1">
             <thead>
@@ -20,8 +26,8 @@
             {% for item in data %}
                 <tr>
                      <td>{{item.FullName}}</td>
-                     <td> {{item._id}} </td>
-                      <td> <a href="/contact/update"> Update </a></td>
+                     <td> {{item.Phone}} </td>
+                      <td> <a href="/contact/update/{{item._id}}"> Update </a></td>
                      <td> <a href="/contact/delete/{{item._id}}"> Delete </a></td>
                 </tr>
              {% endfor %}
